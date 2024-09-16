@@ -9,7 +9,7 @@ Login page, and create workout and log workout capabilities.
 A workout will be an object that should consist of atleast the following properties.
 
 
-```JSON
+```js
 Workout{
         ObjectId:
         name: 
@@ -18,7 +18,7 @@ Workout{
 ```
 
 Exercise can probably just be schema and not a model
-```JSON
+```js
 exercise{
     name:
     sets: [{reps, weight}]

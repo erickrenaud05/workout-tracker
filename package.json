@@ -1,0 +1,12 @@
+{
+  "name": "workout-tracker",
+  "version": "1.0.0",
+  "description": "minium product will be a workout tracker without sharing features, This should be the main focus for this week.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
