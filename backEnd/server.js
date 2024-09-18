@@ -1,11 +1,31 @@
 const express = require('express');
-
 const connectDB = require('./config/connection');
+const {User} = require('./model');
 connectDB();
 
 const app = express();
 
 const PORT =  process.env.PORT || 3001;
+
+app.get('/', async(req, res)=>{
+    // const newUser = new User({
+    //     name: 'Erick',
+    //     username: 'COol',
+    //     password: 'password'
+    // });
+
+    // await newUser.save();
+    // res.status(200).json(newUser);
+
+    // const user = await User.findOne({ name: 'Erick'});
+    
+    // if(user.checkPassword('password')){
+    //     res.status(200).json(user)
+    // } else{
+    //     res.status(401).json('uhoh')
+    // }
+    
+})
 
 app.listen(PORT, () => {
     console.log(`API server running on port ${PORT}!`);
