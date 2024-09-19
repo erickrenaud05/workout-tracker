@@ -1,14 +1,14 @@
 const mongoose = require('mongoose');
-const workoutSchema = require('./workout')
+const {workoutSchema} = require('./workout')
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 
 const userSchema = new mongoose.Schema({
     name: {type: String, required: true},
     username: {type: String, unique: true, required: true},
-    password: String,
-    // workout: [{workoutSchema}],
-    // workoutLog: [{workoutSchema}],
+    password: {type: String, required: true},
+    workout: [{workoutSchema}],
+    workoutLog: [{workoutSchema}],
 });
 
 // hashes password before it is saved in database
