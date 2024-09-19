@@ -26,7 +26,6 @@ app.post('/', async(req, res)=>{
     //     res.status(401).json('uhoh')
     // }
 
-
     //Create with workout
             // const response = await new User({
         //     name: 'Erick',
@@ -49,8 +48,7 @@ app.post('/', async(req, res)=>{
         //         ]
         //     }]
         // });
-    
-    
+
 })
 
 app.listen(PORT, () => {
