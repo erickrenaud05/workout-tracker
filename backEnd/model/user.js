@@ -3,9 +3,9 @@ const bcrypt = require('bcrypt');
 const saltRounds = 10;
 
 const userSchema = new mongoose.Schema({
-    name: {type: String, unique: true, required: true},
+    name: {type: String, required: true},
     username: {type: String, unique: true, required: true},
-    password: String,
+    password: {type: String, required: true},
     // workout: [{workoutSchema}],
     // workoutLog: [{workoutSchema}],
 });
@@ -31,7 +31,7 @@ userSchema.pre('save', function(next){
 
 userSchema.methods.checkPassword = function(password){
     return bcrypt.compareSync(password, this.password);
-}
+};
 
 const User = mongoose.model('user', userSchema);
 
