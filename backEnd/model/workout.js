@@ -15,10 +15,14 @@ const mongoose = require('mongoose');
 //                 };
 
 const workoutSchema = new mongoose.Schema({
-
-    day: String,
+    day: {type: String, required: true},
     name: {type: String, required: true},
-    // exercise: [exerciseSchema]
-})
+    exercise: [{
+        name: {type: String, required: true},
+        reps: {type: Number, required: true},
+        sets: {type: Number, required: true},
+    }],
+});
+
 
 module.exports = workoutSchema

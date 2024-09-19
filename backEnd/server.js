@@ -1,13 +1,14 @@
 const express = require('express');
 const connectDB = require('./config/connection');
 const {User} = require('./model');
+const workoutSchema = require('./model/workout');
 connectDB();
 
 const app = express();
 
 const PORT =  process.env.PORT || 3001;
 
-app.get('/', async(req, res)=>{
+app.post('/', async(req, res)=>{
     // const newUser = new User({
     //     name: 'Erick',
     //     username: 'COol',
@@ -24,6 +25,31 @@ app.get('/', async(req, res)=>{
     // } else{
     //     res.status(401).json('uhoh')
     // }
+
+
+    //Create with workout
+            // const response = await new User({
+        //     name: 'Erick',
+        //     username: 'Myuser',
+        //     password: 'password',
+        //     workout: [{
+        //         day: 'Monday',
+        //         name: 'ChestDay',
+        //         exercise: [
+        //             {
+        //                 name: 'ChestPress',
+        //                 reps: 2,
+        //                 sets: 3,
+        //             },
+        //             {
+        //                 name: 'FLies',
+        //                 reps: 4,
+        //                 sets: 5
+        //             }
+        //         ]
+        //     }]
+        // });
+    
     
 })
 
