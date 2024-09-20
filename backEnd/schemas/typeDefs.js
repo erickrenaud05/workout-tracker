@@ -18,10 +18,22 @@ const typeDefs = `
       sets: Int
     }
 
+    input ExerciseInput {
+      name: String
+      reps: Int
+      sets: Int
+    }
+
   # Define which queries the front end is allowed to make and what data is returned
   type Query {
     users: [User]
     workout: [Workout]
+    user(id: ID!): User
+  }
+
+  type Mutation {
+    createUser(name: String!, username: String!, password: String!): User
+    createWorkout(userId: ID, day: String!, name: String!, exercises: [ExerciseInput]): Workout
   }
 `;
 
