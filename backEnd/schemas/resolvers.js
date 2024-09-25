@@ -1,4 +1,5 @@
 const { User } = require('../model');
+const { signToken, AuthenticationError } = require('../utils/auth');
 
 // Create the functions that fulfill the queries defined in `typeDefs.js`
 const resolvers = {
@@ -15,21 +16,20 @@ const resolvers = {
   },
   Mutation: {
     createUser: async (parent, args) =>{
-      return await User.create({name: args.name, username: args.username, password: args.password});
+      const user = await User.create({name: args.name, username: args.username, password: args.password});
+      const token = signToken(user);
+      return { token, user };
     },
     createWorkout: async (parent, args)=>{
       const user = await User.findById(args.userId);
 
       const exercise = args.exercises;
 
-      
-
       const newWorkout = {
         day: args.day,
         name: args.name,
         exercise
       };
-      console.log(user.workout)
 
       user.workout.push(newWorkout);
       await user.save();

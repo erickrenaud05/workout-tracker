@@ -18,6 +18,11 @@ const typeDefs = `
       sets: Int
     }
 
+    type Auth {
+      token: ID!
+      user: User
+    }
+
     input ExerciseInput {
       name: String
       reps: Int
@@ -32,7 +37,7 @@ const typeDefs = `
   }
 
   type Mutation {
-    createUser(name: String!, username: String!, password: String!): User
+    createUser(name: String!, username: String!, password: String!): Auth
     createWorkout(userId: ID, day: String!, name: String!, exercises: [ExerciseInput]): Workout
   }
 `;
