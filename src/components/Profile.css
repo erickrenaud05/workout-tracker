@@ -1,0 +1,118 @@
+/* General styling */
+.profile-container {
+  background-color: black; /* Set background color to black */
+  min-height: 100vh;
+  padding: 20px;
+  color: white; /* Ensure text remains white for contrast */
+}
+
+/* Logo and menu */
+.logo-center {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+}
+
+.menu {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 15px;
+}
+
+.menu a {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.menu a:hover {
+  background-color: #218838;
+}
+
+/* Layout for profile info and favorite workouts */
+.profile-layout {
+  display: flex; /* Flexbox to align bio info and favorite workouts side by side */
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+/* Bio Information */
+.bio-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* Allow bio section to take up remaining space */
+  margin-right: 40px; /* Add space between bio info and favorite workouts */
+}
+
+.bio-info label {
+  margin-bottom: 5px;
+}
+
+.bio-info input, .bio-info select {
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: none;
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Favorite Workouts - aligned to the right */
+.favorite-workouts {
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* Allow favorite workouts to take space on the right */
+}
+
+.favorite-workouts input {
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: none;
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Goal Progress */
+.goal-progress-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.goal-box {
+  background-color: rgba(0, 0, 0, 0.8); /* Keep a slightly different black tone for the goal box */
+  padding: 20px;
+  border-radius: 10px;
+  width: 30%;
+  text-align: center;
+}
+
+.goal-box input[type="range"] {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.goal-box input[type="text"] {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: none;
+  width: 100%;
+}
+
+.goal-box p {
+  font-size: 18px;
+  color: #28a745; /* Keep progress text green */
+}

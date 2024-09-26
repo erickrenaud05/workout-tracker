@@ -1,0 +1,58 @@
+/* Full-page background image styling */
+.splash-container {
+    color: white;
+    position: relative; /* Necessary to position the logo within the container */
+  }
+  
+  /* Logo in the top-right corner */
+  .logo-box {
+    position: absolute;
+    top: 20px;  /* Adjust positioning */
+    left: 20px; /* Adjust positioning */
+  }
+  
+  /* Double the size of the logo */
+  .logo {
+    width: 300px; /* Double the size (previously 150px) */
+    height: auto;
+  }
+  
+  /* Login form styling */
+  .login-form {
+    background-color: rgba(255, 255, 255, 0.807); /* Transparent white background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px; /* Consistent width */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .login-form h2 {
+    margin-bottom: 20px;
+    color: rgb(0, 0, 0);
+  }
+  
+  .login-form input {
+    width: 100%; /* Ensure inputs take up full width of the form */
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  .login-form button {
+    padding: 10px 20px;
+    width: 100%; /* Make button full width */
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .login-form button:hover {
+    background-color: #218838;
+  }  
