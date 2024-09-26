@@ -30,7 +30,7 @@ userSchema.pre('save', function(next){
     }
 });
 
-userSchema.methods.checkPassword = function(password){
+userSchema.methods.isCorrectPassword = function(password){
     return bcrypt.compareSync(password, this.password);
 };
 

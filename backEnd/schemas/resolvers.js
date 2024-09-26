@@ -1,5 +1,5 @@
 const { User } = require('../model');
-const { signToken, AuthenticationError } = require('../utils/auth');
+const { signToken, AuthenticationError, getUser } = require('../utils/auth');
 
 // Create the functions that fulfill the queries defined in `typeDefs.js`
 const resolvers = {
@@ -9,9 +9,11 @@ const resolvers = {
       return await User.find({});
     },
 
-    user: async(parent, args) =>{
-      //if jwt token matches return this
-      return await User.findById(args.id);
+    user: async(parent, args, context) =>{
+      if (context.user) {
+        return User.findOne({ _id: context.user._id });
+      }
+      throw AuthenticationError;
     }
   },
   Mutation: {
@@ -20,9 +22,12 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-    createWorkout: async (parent, args)=>{
-      const user = await User.findById(args.userId);
-
+    createWorkout: async (parent, args, context)=>{
+      if (!context.user) {
+        throw AuthenticationError;
+      };
+      const user = User.findOne({ _id: context.user._id });
+      
       const exercise = args.exercises;
 
       const newWorkout = {
