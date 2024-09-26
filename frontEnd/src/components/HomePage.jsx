@@ -1,5 +1,6 @@
 import React from 'react';
 import './HomePage.css'; // External stylesheet
+import Logo from '../assets/logo.jpg';
 
 const HomePage = () => {
   const userName = 'John Doe'; // Example username, replace with dynamic user data
@@ -18,7 +19,7 @@ const HomePage = () => {
     <div className="homepage-container" style={homepageStyle}>
       {/* Left-aligned logo */}
       <div className="logo-center">
-        <img src="./assets/logo.jpg" alt="Logo" className="logo" />
+        <img src={Logo} alt="Logo" className="logo" />
       </div>
 
       {/* Navigation Menu - now buttons in the top-right */}

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './SplashPage.css';
+import Logo from '../assets/logo.jpg'
+
 
 const SplashPage = () => {
   const [username, setUsername] = useState('');
@@ -31,7 +33,7 @@ const SplashPage = () => {
     <div className="splash-container" style={splashStyle}>
       {/* Logo in the top-right corner */}
       <div className="logo-box">
-        <img src="/logo.jpg" alt="Logo" className="logo" /> {/* Use logo.jpg */}
+        <img src={Logo} alt="Logo" className="logo" /> {/* Use logo.jpg */}
       </div>
 
       {/* Login Form */}

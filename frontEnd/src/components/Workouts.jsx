@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Workouts.css'; // Keep for other styling
+import Logo from '../assets/logo.jpg'
 
 const Workouts = () => {
   const [workoutPlan, setWorkoutPlan] = useState({});
@@ -71,7 +72,7 @@ const Workouts = () => {
     <div className="workouts-container" style={workoutsStyle}> {/* Apply inline background style */}
       {/* Logo and Menu, similar to other pages */}
       <div className="logo-center">
-        <img src="/logo.jpg" alt="Logo" className="logo" />
+        <img src={Logo} alt="Logo" className="logo" />
       </div>
 
       <nav className="menu">
