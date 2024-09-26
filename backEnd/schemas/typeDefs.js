@@ -38,7 +38,8 @@ const typeDefs = `
 
   type Mutation {
     createUser(name: String!, username: String!, password: String!): Auth
-    createWorkout(userId: ID, day: String!, name: String!, exercises: [ExerciseInput]): Workout
+    createWorkout(day: String!, name: String!, exercises: [ExerciseInput]): Workout
+    logWorkout(day: String!, name: String!, exercises: [ExerciseInput]): Workout
   }
 `;
 

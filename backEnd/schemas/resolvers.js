@@ -41,6 +41,25 @@ const resolvers = {
 
       return(user);
     }
+  },
+  logWorkout: async(parent, args, context)=>{
+    if (!context.user) {
+      throw AuthenticationError;
+    };
+    const user = User.findOne({ _id: context.user._id });
+    
+    const exercise = args.exercises;
+
+    const newWorkoutLog = {
+      day: args.day,
+      name: args.name,
+      exercise
+    };
+
+    user.workoutLog.push(newWorkoutLog);
+    await user.save();
+
+    return(user);
   }
 };
 
