@@ -22,6 +22,35 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
+    login: async(parent, args) => {
+      const {username, password} = args;
+
+      if(!username || !password){
+        throw AuthenticationError
+      };
+
+      try {
+        const user = await User.findOne({
+          username: username,
+        });
+
+        if(!user){
+          throw AuthenticationError
+        };
+
+        const verified = user.isCorrectPassword(password);
+        
+        if(!verified){
+          throw AuthenticationError
+        };
+ 
+        const token = signToken(user.username, user._id);
+       
+        return { token, user };
+      } catch (error) {
+        console.log(error)
+      } 
+    },
     createWorkout: async (parent, args, context)=>{
       if (!context.user) {
         throw AuthenticationError;
@@ -40,26 +69,26 @@ const resolvers = {
       await user.save();
 
       return(user);
+    },
+    logWorkout: async(parent, args, context)=>{
+      if (!context.user) {
+        throw AuthenticationError;
+      };
+      const user = User.findOne({ _id: context.user._id });
+      
+      const exercise = args.exercises;
+
+      const newWorkoutLog = {
+        day: args.day,
+        name: args.name,
+        exercise
+      };
+
+      user.workoutLog.push(newWorkoutLog);
+      await user.save();
+
+      return(user);
     }
-  },
-  logWorkout: async(parent, args, context)=>{
-    if (!context.user) {
-      throw AuthenticationError;
-    };
-    const user = User.findOne({ _id: context.user._id });
-    
-    const exercise = args.exercises;
-
-    const newWorkoutLog = {
-      day: args.day,
-      name: args.name,
-      exercise
-    };
-
-    user.workoutLog.push(newWorkoutLog);
-    await user.save();
-
-    return(user);
   }
 };
 

@@ -40,7 +40,8 @@ const typeDefs = `
     createUser(name: String!, username: String!, password: String!): Auth
     createWorkout(day: String!, name: String!, exercises: [ExerciseInput]): Workout
     logWorkout(day: String!, name: String!, exercises: [ExerciseInput]): Workout
-  }
+    login(username: String!, password: String!): Auth
+    }
 `;
 
 module.exports = typeDefs;

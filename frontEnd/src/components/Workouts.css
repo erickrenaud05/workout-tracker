@@ -1,0 +1,116 @@
+.logo-center {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+  }
+  
+  .logo {
+    width: 150px;
+    height: auto;
+  }
+  
+  /* Menu styling - top-right and buttons */
+  .menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 15px;
+  }
+  
+  .menu a {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+  
+  .menu a:hover {
+    background-color: #218838;
+  }
+  
+  /* Calendar table styling */
+  .calendar {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .calendar th, .calendar td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  
+  .calendar input {
+    width: 100%;
+    padding: 5px;
+    color: #000;
+    border-radius: 5px;
+    border: none;
+  }
+  
+  /* Suggest workouts button */
+  .suggest-button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  
+  .suggest-button:hover {
+    background-color: #218838;
+  }
+  
+  /* Custom workout form styling */
+  form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px;
+  }
+  
+  form button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  form button:hover {
+    background-color: #218838;
+  }
+  
+  /* Custom workouts list */
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  ul li {
+    margin-bottom: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 5px;
+  }
+  /* Favorite Workouts - now stacked vertically */
+  .favorite-workouts {
+    display: flex;
+    flex-direction: column; /* Stack the inputs vertically */
+  }
