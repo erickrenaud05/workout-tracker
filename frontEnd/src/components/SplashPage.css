@@ -2,7 +2,17 @@
 .splash-container {
     color: white;
     position: relative; /* Necessary to position the logo within the container */
-  }
+    background-image: url('../assets/background-profile.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative; 
+}
   
   /* Logo in the top-right corner */
   .logo-box {

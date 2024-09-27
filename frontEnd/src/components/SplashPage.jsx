@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './SplashPage.css';
-import Logo from '../assets/logo.jpg'
+import Logo from '../assets/logo.jpg';
+import Background from '../assets/background-profile.jpg';
 
 
 const SplashPage = () => {
@@ -15,22 +16,8 @@ const SplashPage = () => {
     navigate('/home');
   };
 
-  // Inline styles for background image
-  const splashStyle = {
-    backgroundImage: 'url(/background.jpg)', // Path to the background image in the public folder
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    height: '100vh',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    textAlign: 'center',
-    position: 'relative', // Important for positioning the logo
-  };
-
   return (
-    <div className="splash-container" style={splashStyle}>
+    <div className="splash-container">
       {/* Logo in the top-right corner */}
       <div className="logo-box">
         <img src={Logo} alt="Logo" className="logo" /> {/* Use logo.jpg */}
