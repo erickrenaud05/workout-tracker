@@ -6,17 +6,17 @@ const HomePage = () => {
   const userName = 'John Doe'; // Example username, replace with dynamic user data
 
   // Inline styles for full-page background image
-  const homepageStyle = {
-    backgroundImage: 'url(/background-home.jpg)', // Path to the background image in the public folder
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    minHeight: '100vh', // Full viewport height
-    padding: '20px',
-    color: 'white', // Ensure text is visible on the background
-  };
+//   const homepageStyle = {
+//     backgroundImage: 'url(/background-home.jpg)', // Path to the background image in the public folder
+//     backgroundSize: 'cover',
+//     backgroundPosition: 'center',
+//     minHeight: '100vh', // Full viewport height
+//     padding: '20px',
+//     color: 'white', // Ensure text is visible on the background
+//   };
 
   return (
-    <div className="homepage-container" style={homepageStyle}>
+    <div className="homepage-container">
       {/* Left-aligned logo */}
       <div className="logo-center">
         <img src={Logo} alt="Logo" className="logo" />
