@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './SplashPage.css';
 import Logo from '../assets/logo.jpg';
-import Background from '../assets/background-profile.jpg';
-
 
 const SplashPage = () => {
   const [username, setUsername] = useState('');
