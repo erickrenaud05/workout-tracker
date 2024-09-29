@@ -23,3 +23,9 @@
     color: #141414; /* Keep progress text green */
     font-weight: 400;
   }
+
+  .footer a:hover {
+    font-size: 22px;
+    color: #002E5D; /* Keep progress text green */
+    font-weight: 400;
+  }
