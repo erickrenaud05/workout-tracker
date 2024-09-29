@@ -1,0 +1,46 @@
+/* NavBar.css */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #002E5D;
+  padding: 10px 0px;
+  height: 110px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  opacity: 0.9;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: left;
+}
+
+.navbar-left .logo {
+  max-height: 130px;
+  width: auto;
+  object-fit: contain;
+  margin-right: 15px;
+  opacity: 0.9;
+}
+
+.navbar-right {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 10px;
+  transition: background-color 0.3s ease;
+  border-radius: 5px;
+}
+
+.nav-link:hover {
+  background-color: #555;
+}
