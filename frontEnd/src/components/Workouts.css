@@ -1,14 +1,4 @@
-.logo-center {
-    display: flex;
-    justify-content: flex-start;
-    margin-bottom: 20px;
-  }
-  
-  .logo {
-    width: 150px;
-    height: auto;
-  }
-  
+
   /* Menu styling - top-right and buttons */
   .menu {
     position: absolute;
@@ -58,7 +48,7 @@
   /* Suggest workouts button */
   .suggest-button {
     padding: 10px 20px;
-    background-color: #28a745;
+    background-color: #00D1B2;
     color: white;
     border: none;
     border-radius: 5px;
@@ -67,7 +57,7 @@
   }
   
   .suggest-button:hover {
-    background-color: #218838;
+    background-color: #00d1ae8a;
   }
   
   /* Custom workout form styling */
@@ -86,7 +76,7 @@
   
   form button {
     padding: 10px 20px;
-    background-color: #28a745;
+    background-color: #00D1B2;
     color: white;
     border: none;
     border-radius: 5px;
@@ -94,7 +84,7 @@
   }
   
   form button:hover {
-    background-color: #218838;
+    background-color: #00d1ae8a;
   }
   
   /* Custom workouts list */
