@@ -2,7 +2,7 @@
   "name": "workout-tracker",
   "version": "1.0.0",
   "description": "minium product will be a workout tracker without sharing features, This should be the main focus for this week.",
-  "main": "index.js",
+  "main": "backEnd/server.js",
   "scripts": {
   "start": "node server/server.js",
   "develop": "concurrently \"cd backEnd && npm run watch\" \"cd frontEnd && npm run dev\"",
