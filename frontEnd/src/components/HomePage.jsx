@@ -111,7 +111,7 @@ const HomePage = ({ user }) => {
               }
         });
 
-        alert('Workout Created')
+        alert('Workout Logged')
         setLoggedWorkouts([]);
         setSelectedWorkout('');
     } catch (error) {
