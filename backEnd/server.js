@@ -1,6 +1,6 @@
 const express = require('express');
 const connectDB = require('./config/connection');
-
+const path = require('path');
 const { ApolloServer } = require('@apollo/server');
 const { expressMiddleware } = require('@apollo/server/express4');
 const { authMiddleware } = require('./utils/auth');
