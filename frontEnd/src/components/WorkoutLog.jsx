@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react'
 
-const WorkoutLog = ({ exercises, onLogWorkout, setUserWorkout, currWorkouts }) => {
+const WorkoutLog = ({ exercises, onLogWorkout}) => {
     const [selectedExercise, setSelectedExercise] = useState('');
     const [sets, setSets] = useState('');
     const [reps, setReps] = useState('');
@@ -10,7 +10,6 @@ const WorkoutLog = ({ exercises, onLogWorkout, setUserWorkout, currWorkouts }) =
     
     const onEndWorkout = (e) => {
         onLogWorkout(workout);
-        setUserWorkout()
         setWorkout([]);
     }
 
