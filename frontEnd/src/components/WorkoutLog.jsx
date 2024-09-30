@@ -1,12 +1,19 @@
 import React from 'react';
 import { useState } from 'react'
 
-const WorkoutLog = ({ exercises, onLogWorkout }) => {
+const WorkoutLog = ({ exercises, onLogWorkout, setUserWorkout, currWorkouts }) => {
     const [selectedExercise, setSelectedExercise] = useState('');
-    const [sets, setSets] = useState();
+    const [sets, setSets] = useState('');
     const [reps, setReps] = useState('');
     const [weight, setWeight] = useState('');
+    const [workout, setWorkout] = useState([]);
     
+    const onEndWorkout = (e) => {
+        onLogWorkout(workout);
+        setUserWorkout()
+        setWorkout([]);
+    }
+
     const handleSubmit = (e) => {
       e.preventDefault();
   
@@ -15,12 +22,11 @@ const WorkoutLog = ({ exercises, onLogWorkout }) => {
         name: selectedExercise,
         sets: parseInt(sets, 10),
         reps: parseInt(reps, 10),
-        weight: parseInt(reps, 10),
+        weight: parseInt(weight, 10),
       };
-  
-      // Call the parent function to log the workout
-      onLogWorkout(workoutEntry);
-  
+      workout.push(workoutEntry);
+      setWorkout(workout);
+
       // Clear the input fields
       setSelectedExercise('');
       setSets('');
@@ -38,7 +44,7 @@ const WorkoutLog = ({ exercises, onLogWorkout }) => {
               <select
                 value={selectedExercise}
                 onChange={(e) => {
-                    exercises.exercise.map((exercise, index) => {
+                    exercises.exercise.map((exercise) => {
                         if(exercise.name === e.target.value){
                             setSets(exercise.sets);
                             setReps(exercise.reps)
@@ -92,6 +98,7 @@ const WorkoutLog = ({ exercises, onLogWorkout }) => {
           </div>
           <button type="submit">Log Workout</button>
         </form>
+        <button type="button" onClick={onEndWorkout}>End Workout</button>
       </div>
     );
   };

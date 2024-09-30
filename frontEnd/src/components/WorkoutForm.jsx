@@ -52,7 +52,11 @@ const WorkoutForm = () => {
                     Authorization:`Bearer ${localStorage.getItem('JWT')}`
                 }
               }
-        })
+        });
+
+        alert('Workout Created!')
+        setWorkoutName('');
+        setExercises([{ name: '', sets: '', reps: '' }]);
     } catch (error) {
         console.log(error)
     }

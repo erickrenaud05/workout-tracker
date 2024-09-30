@@ -84,8 +84,14 @@ const HomePage = ({ user }) => {
 
   const handleLogWorkout = async(workoutEntry) => {
     setLoggedWorkouts([...loggedWorkouts, workoutEntry]);
+    if(workoutEntry.length === 0){
+      setSelectedWorkout('');
+      alert('No workout recorded')
+      return
+    };
+
     try {
-      const formattedExercises = loggedWorkouts.map(exercise => ({
+      const formattedExercises = workoutEntry.map(exercise => ({
         ...exercise,
         sets: parseInt(exercise.sets, 10), // Convert to integer
         reps: parseInt(exercise.reps, 10),
@@ -103,7 +109,11 @@ const HomePage = ({ user }) => {
                     Authorization:`Bearer ${localStorage.getItem('JWT')}`
                 }
               }
-        })
+        });
+
+        alert('Workout Created')
+        setLoggedWorkouts([]);
+        setSelectedWorkout('');
     } catch (error) {
         console.log(error);
     }
