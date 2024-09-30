@@ -1,0 +1,31 @@
+.footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: left;
+    background-color: #00D1B2;
+    padding: 10px 20px;
+    height: 70px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    opacity: 0.9;
+  }
+
+  .footer p {
+    font-size: 22px;
+    color: #141414; /* Keep progress text green */
+    font-weight: 300;
+  }
+
+  .footer a {
+    font-size: 22px;
+    color: #141414; /* Keep progress text green */
+    font-weight: 400;
+  }
+
+  .footer a:hover {
+    font-size: 22px;
+    color: #002E5D; /* Keep progress text green */
+    font-weight: 400;
+  }

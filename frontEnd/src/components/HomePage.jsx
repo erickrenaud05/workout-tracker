@@ -1,6 +1,7 @@
 import React from 'react';
 import './HomePage.css'; // External stylesheet
-import Logo from '../assets/logo.jpg';
+import Navbar from './Navbar';
+import Footer from './Footer';
 
 const HomePage = () => {
   const userName = 'John Doe'; // Example username, replace with dynamic user data
@@ -17,17 +18,8 @@ const HomePage = () => {
 
   return (
     <div className="homepage-container">
-      {/* Left-aligned logo */}
-      <div className="logo-center">
-        <img src={Logo} alt="Logo" className="logo" />
-      </div>
-
       {/* Navigation Menu - now buttons in the top-right */}
-      <nav className="menu">
-        <a href="/home">Home</a>
-        <a href="/workouts">Workouts</a>
-        <a href="/profile">Profile</a>
-      </nav>
+      <Navbar /> {/* Display Navbar here */}
 
       {/* Welcome Message */}
       <h2 className="welcome-message">Welcome, {userName}</h2>
@@ -83,11 +75,8 @@ const HomePage = () => {
       </div>
 
       {/* Footer */}
-      <footer className="footer">
-        <p>Follow us on Instagram: <a href="https://instagram.com/Limitless">@Limitless</a></p>
-        <p>Contact: <a href="mailto:info@limitlessapp.com">info@limitlessapp.com</a></p>
-      </footer>
-    </div>
+      <Footer />
+      </div>
   );
 };
 

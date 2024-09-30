@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Workouts.css'; // Keep for other styling
-import Logo from '../assets/logo.jpg'
+import Navbar from './Navbar';
 
 const Workouts = () => {
   const [workoutPlan, setWorkoutPlan] = useState({});
@@ -64,22 +64,16 @@ const Workouts = () => {
     backgroundImage: 'url(/background-workout.jpg)', // Path to the background image in the public folder
     backgroundSize: 'cover',
     backgroundPosition: 'center',
-    minHeight: '100vh', // Full viewport height
+    minHeight: '100vh',
+    minWidth: '97vw',
     padding: '20px',
     color: 'white', // Ensure text is visible on the background
   };
   return (
     <div className="workouts-container" style={workoutsStyle}> {/* Apply inline background style */}
-      {/* Logo and Menu, similar to other pages */}
-      <div className="logo-center">
-        <img src={Logo} alt="Logo" className="logo" />
-      </div>
 
-      <nav className="menu">
-        <a href="/home">Home</a>
-        <a href="/workouts">Workouts</a>
-        <a href="/profile">Profile</a>
-      </nav>
+      {/* Navigation Menu - now buttons in the top-right */}
+      <Navbar /> {/* Display Navbar here */}
 
       {/* Monthly Calendar */}
       <h2>Monthly Workout Calendar</h2>

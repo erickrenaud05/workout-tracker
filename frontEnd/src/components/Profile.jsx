@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Profile.css'; // External CSS for styling
-import Logo from '../assets/logo.jpg';
+import Navbar from './Navbar';
 
 const Profile = () => {
   // State for bio information
@@ -48,17 +48,8 @@ const Profile = () => {
 
   return (
     <div className="profile-container"> {/* Inline background style */}
-      {/* Logo and Menu, similar to other pages */}
-      <div className="logo-center">
-        <img src={Logo} alt="Logo" className="logo" />
-      </div>
-
-      <nav className="menu">
-        <a href="/home">Home</a>
-        <a href="/workouts">Workouts</a>
-        <a href="/profile">Profile</a>
-        <img src={Logo} alt="Logo" className="logo" />
-      </nav>
+      {/* Navigation Menu - now buttons in the top-right */}
+      <Navbar /> {/* Display Navbar here */}
 
       {/* Bio Information and Favorite Workouts Side by Side */}
       <div className="profile-layout">
