@@ -3,15 +3,41 @@ import { useNavigate } from 'react-router-dom';
 import './SplashPage.css';
 import Logo from '../assets/logo.jpg';
 
+import { useMutation } from '@apollo/client';
+import { CREATE_USER, LOGIN  } from '../utils/mutations';
+
 const SplashPage = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
+  const [login, { error }] = useMutation(LOGIN);
 
-  const handleLogin = (e) => {
+  const handleLogin = async(e) => {
     e.preventDefault();
     // Implement login logic
-    navigate('/home');
+    
+    try {
+      const { data } = await login({
+        variables: { username, password },
+      });
+
+      if(!data.login){
+        alert('Invalid credentials');
+        setUsername('');
+        setPassword('');
+        return;
+      }
+
+      localStorage.setItem('JWT', data.login.token);
+
+      setUsername('');
+      setPassword('');
+      navigate('/home');
+    } catch (err) {
+      console.error(err);
+    }
+
+   
   };
 
   return (

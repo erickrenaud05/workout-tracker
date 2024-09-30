@@ -21,9 +21,18 @@ const startApolloServer = async () => {
     app.use(express.urlencoded({ extended: false }));
     app.use(express.json());
   
-    app.use('/graphql', expressMiddleware(server, {
+    if (process.env.NODE_ENV === 'production') {
+        app.use(express.static(path.join(__dirname, '../frontEnd/dist')));
+        
+        app.get('*', (req, res) => {
+          res.sendFile(path.join(__dirname, '../frontEnd/dist/index.html'));
+        });
+      }
+
+      app.use('/graphql', expressMiddleware(server, {
         context: authMiddleware
-    }));
+      }));
+
     
     connectDB();
     app.listen(PORT, () => {

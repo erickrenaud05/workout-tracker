@@ -24,7 +24,7 @@ const resolvers = {
     },
     login: async(parent, args) => {
       const {username, password} = args;
-
+      
       if(!username || !password){
         throw AuthenticationError
       };
