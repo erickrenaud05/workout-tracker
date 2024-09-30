@@ -3,13 +3,16 @@ import { gql } from '@apollo/client';
 
 // Use the gql function to access the thoughts entrypoint and export it
 export const CREATE_USER = gql`
-mutation createUser($name: String!, $username: String!, $password: String!) {
-    createUser(name: $name, username: $username, password: $password) {
+mutation Mutation($name: String!, $username: String!, $password: String!, $age: Int) {
+  createUser(name: $name, username: $username, password: $password, age: $age) {
+    token
+    user {
+      age
       name
       username
-      password
     }
   }
+}
 `;
 
 export const LOGIN = gql`
