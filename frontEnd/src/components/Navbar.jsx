@@ -13,6 +13,7 @@ const Navbar = () => {
       
       {/* Right side: Links */}
       <div className="navbar-right">
+        <Link to="/" className="nav-link">Logout</Link>
         <Link to="/home" className="nav-link">Home</Link>
         <Link to="/workouts" className="nav-link">Workouts</Link>
         <Link to="/profile" className="nav-link">Profile</Link>

@@ -36,7 +36,8 @@ const SplashPage = () => {
 
       setUsername('');
       setPassword('');
-      navigate('/home');
+      window.location.reload();
+      window.location = '/home';
     } catch (err) {
       console.error(err);
     }
@@ -59,7 +60,8 @@ const SplashPage = () => {
 
       setUsername('');
       setPassword('');
-      navigate('/home');
+      window.location.reload();
+      window.location = '/home';
     } catch (err) {
       alert('User already exist');
     }

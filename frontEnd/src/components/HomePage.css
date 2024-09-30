@@ -105,3 +105,32 @@
   li {
     margin-bottom: 10px;
   }  
+
+  form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 80%;
+  }
+
+  form div{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 50%;
+    margin: 2px;
+  }
+
+  form input {
+    height: 20px;
+    display: flex;
+    width: 100%;
+  }
+
+  form button{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 50%;
+    margin: 2px;
+  }

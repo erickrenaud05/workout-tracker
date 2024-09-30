@@ -2,18 +2,13 @@ import React, { useState } from 'react';
 import './Profile.css'; // External CSS for styling
 import Navbar from './Navbar';
 
-const Profile = () => {
-  // State for bio information
-  const [bio, setBio] = useState({
-    name: 'John Doe',
-    age: 25,
-    height: '6 feet',
-    currentWeight: '180 lbs',
-    experience: 'Intermediate',
-    targetWeight: '170 lbs',
-  });
 
-  // State for favorite workouts
+const Profile = (props) => {
+  const [bio, setBio] = useState({
+    name: props.user.name,
+    age: props.user.age,
+  });
+   // State for favorite workouts
   const [favoriteWorkouts, setFavoriteWorkouts] = useState(['Running', 'Weightlifting', 'Cycling']);
 
   // State for goal progress (0 to 100) and goal labels
@@ -23,6 +18,8 @@ const Profile = () => {
     { label: 'Lose 10 lbs', progress: 30 },
   ]);
 
+  
+  
   // Update bio information
   const handleBioChange = (e) => {
     const { name, value } = e.target;
@@ -47,7 +44,7 @@ const Profile = () => {
   };
 
   return (
-    <div className="profile-container"> {/* Inline background style */}
+    <div className="profile-container" > {/* Inline background style */}
       {/* Navigation Menu - now buttons in the top-right */}
       <Navbar /> {/* Display Navbar here */}
 
@@ -59,8 +56,8 @@ const Profile = () => {
           <input type="text" name="name" value={bio.name} onChange={handleBioChange} />
           <label>Age:</label>
           <input type="text" name="age" value={bio.age} onChange={handleBioChange} />
-          <label>Height:</label>
-          <input type="text" name="height" value={bio.height} onChange={handleBioChange} />
+          {/* <label>Height:</label> */}
+          {/* <input type="text" name="height" value={bio.height} onChange={handleBioChange} />
           <label>Current Weight:</label>
           <input type="text" name="currentWeight" value={bio.currentWeight} onChange={handleBioChange} />
           <label>Workout Experience:</label>
@@ -70,7 +67,7 @@ const Profile = () => {
             <option value="Expert">Expert</option>
           </select>
           <label>Target Weight:</label>
-          <input type="text" name="targetWeight" value={bio.targetWeight} onChange={handleBioChange} />
+          <input type="text" name="targetWeight" value={bio.targetWeight} onChange={handleBioChange} /> */}
         </div>
 
         {/* Favorite Workouts Section */}

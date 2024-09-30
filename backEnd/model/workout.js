@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+const exerciseSchema = require('./exercise')
 // "workout_id": ObjectId("64b2f2748f0a5a35f8e1dfce"),
 //     "day": "Monday",
 //         "name": "Upper Body Strength",
@@ -15,12 +15,9 @@ const mongoose = require('mongoose');
 //                 };
 
 const workoutSchema = new mongoose.Schema({
-    day: {type: String, required: true},
+    day: {type: String},
     name: {type: String, required: true},
-    exercise: [{
-        name: {type: String, required: true},
-        sets: [{weight: Number, reps: Number}],
-    }],
+    exercise: [exerciseSchema],
 });
 
 

@@ -10,13 +10,14 @@ const typeDefs = `
     type Workout {
         day: String
         name: String
-        exercises: [Exercise]
+        exercise: [Exercise]
     }
 
     type Exercise {
       name: String
       reps: Int
       sets: Int
+      weight: Int
     }
 
     type Auth {
@@ -28,6 +29,7 @@ const typeDefs = `
       name: String
       reps: Int
       sets: Int
+      weight: Int
     }
 
   # Define which queries the front end is allowed to make and what data is returned
@@ -39,8 +41,8 @@ const typeDefs = `
 
   type Mutation {
     createUser(name: String!, username: String!, password: String!, age: Int): Auth
-    createWorkout(day: String!, name: String!, exercises: [ExerciseInput]): Workout
-    logWorkout(day: String!, name: String!, exercises: [ExerciseInput]): Workout
+    createWorkout(day: String, name: String!, exercises: [ExerciseInput]): Workout
+    logWorkout(day: String, name: String!, exercises: [ExerciseInput]): Workout
     login(username: String!, password: String!): Auth
     }
 `;

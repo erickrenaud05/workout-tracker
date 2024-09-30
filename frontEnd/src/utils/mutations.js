@@ -15,6 +15,20 @@ mutation Mutation($name: String!, $username: String!, $password: String!, $age: 
 }
 `;
 
+export const CREATE_WORKOUT = gql`
+mutation Mutation($name: String!, $exercises: [ExerciseInput]) {
+  createWorkout(name: $name, exercises: $exercises) {
+    day
+    exercise {
+      name
+      reps
+      sets
+    }
+    name
+  }
+}
+`;
+
 export const LOGIN = gql`
 mutation Mutation($username: String!, $password: String!) {
   login(username: $username, password: $password) {
@@ -26,3 +40,18 @@ mutation Mutation($username: String!, $password: String!) {
   }
 }
 `;
+
+export const LOG_WORKOUT = gql`
+mutation LogWorkout($day: String, $name: String!, $exercises: [ExerciseInput]) {
+  logWorkout(day: $day, name: $name, exercises: $exercises) {
+    day
+    exercise {
+      name
+      reps
+      sets
+    }
+    name
+  }
+}
+`
+
